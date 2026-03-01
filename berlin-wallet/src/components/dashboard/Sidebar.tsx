@@ -3,7 +3,7 @@
 import { usePathname } from 'next/navigation';
 import Logo from '@/components/ui/Logo';
 import { useTheme } from '@/lib/ThemeContext';
-import { LayoutDashboard, CreditCard, Users, ScanLine, Settings, LogOut, Sun, Moon } from 'lucide-react';
+import { LayoutDashboard, CreditCard, Users, ScanLine, BarChart3, Settings, LogOut, Sun, Moon } from 'lucide-react';
 
 interface SidebarProps {
   businessName: string;
@@ -15,6 +15,7 @@ const navItems = [
   { icon: <CreditCard size={20} />, label: 'Tarjetas', href: '/dashboard/tarjetas' },
   { icon: <ScanLine size={20} />, label: 'Escáner', href: '/dashboard/scanner' },
   { icon: <Users size={20} />, label: 'Clientes', href: '/dashboard/clientes' },
+  { icon: <BarChart3 size={20} />, label: 'Analíticas', href: '/dashboard/analitica' },
   { icon: <Settings size={20} />, label: 'Ajustes', href: '/dashboard/ajustes' },
 ];
 

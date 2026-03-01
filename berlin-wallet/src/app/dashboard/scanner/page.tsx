@@ -19,6 +19,7 @@ import {
   LoyaltyCard,
 } from '@/lib/firestore';
 import { ScanLine, Search, UserPlus, Check, Star, AlertTriangle } from 'lucide-react';
+import toast from 'react-hot-toast';
 
 export default function ScannerPage() {
   const { theme } = useTheme();
@@ -154,8 +155,10 @@ export default function ScannerPage() {
       });
       setResult({ type: 'success', message: `${newClient.name} registrado con tarjeta ${card.name}` });
       setNewClient({ name: '', email: '', cardId: '' });
+      toast.success(`${newClient.name} registrado exitosamente`);
     } catch {
       setResult({ type: 'error', message: 'Error al crear cliente.' });
+      toast.error('Error al registrar cliente');
     }
     setLoading(false);
   };

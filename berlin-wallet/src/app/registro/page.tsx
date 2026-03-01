@@ -8,6 +8,7 @@ import Input from '@/components/ui/Input';
 import { useTheme } from '@/lib/ThemeContext';
 import { registerBusiness, BusinessProfile } from '@/lib/auth';
 import { UserPlus, Sun, Moon } from 'lucide-react';
+import toast from 'react-hot-toast';
 
 export default function RegistroPage() {
   const { theme, setTheme } = useTheme();
@@ -55,9 +56,11 @@ export default function RegistroPage() {
         formData.preferredTheme
       );
       setTheme(formData.preferredTheme);
+      toast.success('Cuenta creada exitosamente');
       router.push('/dashboard');
     } catch {
       setError('Error al crear la cuenta. El correo ya podría estar registrado.');
+      toast.error('Error al crear la cuenta');
     } finally {
       setLoading(false);
     }

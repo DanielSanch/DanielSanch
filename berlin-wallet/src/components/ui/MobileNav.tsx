@@ -1,6 +1,6 @@
 'use client';
 
-import { Home, Sparkles, Plus, CreditCard, MessageCircle, LayoutDashboard, Users, ScanLine, Settings } from 'lucide-react';
+import { Home, Sparkles, Plus, CreditCard, MessageCircle, LayoutDashboard, Users, ScanLine, BarChart3 } from 'lucide-react';
 import { useTheme } from '@/lib/ThemeContext';
 
 interface NavItem {
@@ -32,7 +32,7 @@ export default function MobileNav({ mode, activeSection, onNavigate }: MobileNav
     { icon: <CreditCard size={20} />, label: 'Tarjetas', href: '/dashboard/tarjetas' },
     { icon: <ScanLine size={22} />, label: 'Escanear', href: '/dashboard/scanner', isCenter: true },
     { icon: <Users size={20} />, label: 'Clientes', href: '/dashboard/clientes' },
-    { icon: <Settings size={20} />, label: 'Ajustes', href: '/dashboard/ajustes' },
+    { icon: <BarChart3 size={20} />, label: 'Analíticas', href: '/dashboard/analitica' },
   ];
 
   const items = mode === 'landing' ? landingItems : dashboardItems;

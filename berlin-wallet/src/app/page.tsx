@@ -7,6 +7,8 @@ import Features from '@/components/landing/Features';
 import Industries from '@/components/landing/Industries';
 import HowItWorks from '@/components/landing/HowItWorks';
 import Pricing from '@/components/landing/Pricing';
+import Testimonials from '@/components/landing/Testimonials';
+import FAQ from '@/components/landing/FAQ';
 import CTA from '@/components/landing/CTA';
 import Footer from '@/components/landing/Footer';
 import MobileNav from '@/components/ui/MobileNav';
@@ -32,6 +34,8 @@ export default function Home() {
       <Industries />
       <HowItWorks />
       <Pricing />
+      <Testimonials />
+      <FAQ />
       <CTA />
       <Footer />
       <MobileNav mode="landing" activeSection={activeSection} onNavigate={handleNavigate} />

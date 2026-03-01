@@ -8,6 +8,7 @@ import Input from '@/components/ui/Input';
 import { useTheme } from '@/lib/ThemeContext';
 import { loginBusiness, loginWithGoogle } from '@/lib/auth';
 import { LogIn } from 'lucide-react';
+import toast from 'react-hot-toast';
 
 export default function LoginPage() {
   const { theme } = useTheme();
@@ -26,6 +27,7 @@ export default function LoginPage() {
       router.push('/dashboard');
     } catch {
       setError('Credenciales inválidas. Intenta de nuevo.');
+      toast.error('Credenciales inválidas');
     } finally {
       setLoading(false);
     }
@@ -39,6 +41,7 @@ export default function LoginPage() {
       router.push('/dashboard');
     } catch {
       setError('Error al iniciar con Google.');
+      toast.error('Error al iniciar con Google');
     } finally {
       setLoading(false);
     }

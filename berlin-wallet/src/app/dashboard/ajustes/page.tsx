@@ -8,6 +8,7 @@ import { useTheme } from '@/lib/ThemeContext';
 import { auth, db } from '@/lib/firebase';
 import { doc, updateDoc, getDoc } from 'firebase/firestore';
 import { Sun, Moon, Save, Building2 } from 'lucide-react';
+import toast from 'react-hot-toast';
 
 export default function AjustesPage() {
   const { theme, setTheme } = useTheme();
@@ -50,8 +51,9 @@ export default function AjustesPage() {
       setTheme(form.theme);
       setSaved(true);
       setTimeout(() => setSaved(false), 3000);
+      toast.success('Cambios guardados');
     } catch {
-      // Handle error
+      toast.error('Error al guardar los cambios');
     }
     setSaving(false);
   };

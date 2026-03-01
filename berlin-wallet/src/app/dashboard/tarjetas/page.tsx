@@ -9,6 +9,7 @@ import { useTheme } from '@/lib/ThemeContext';
 import { auth } from '@/lib/firebase';
 import { getLoyaltyCards, createLoyaltyCard, deleteLoyaltyCard, LoyaltyCard } from '@/lib/firestore';
 import { Plus, Trash2, Eye, EyeOff } from 'lucide-react';
+import toast from 'react-hot-toast';
 
 export default function TarjetasPage() {
   const { theme } = useTheme();
@@ -40,8 +41,9 @@ export default function TarjetasPage() {
       await createLoyaltyCard(uid, card);
       setShowForm(false);
       loadCards();
+      toast.success('Tarjeta creada exitosamente');
     } catch {
-      // Handle error
+      toast.error('Error al crear la tarjeta');
     }
   };
 
@@ -51,8 +53,9 @@ export default function TarjetasPage() {
     try {
       await deleteLoyaltyCard(uid, cardId);
       loadCards();
+      toast.success('Tarjeta eliminada');
     } catch {
-      // Handle error
+      toast.error('Error al eliminar la tarjeta');
     }
   };
 
