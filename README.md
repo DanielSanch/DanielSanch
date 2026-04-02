@@ -1,19 +1,63 @@
-<h1 align="center">Hola 👋, me llamo Daniel Sanchez</h1>
-<h3 align="center">Soy un Junior Full Stack Angular .NET</h3>
+<div align="center">
 
-- 🔭 Estoy trabajando en la compañía **Smart Finishes LLC**
+# Jesus Daniel Sanchez
 
-- 🌱 Actualmente estoy aprendiendo **JS, NodeJS, Express y Angular Avanzado**
+**Solutions Engineer & AI-Augmented Full-Stack Developer**
 
-- 💬 Preguntame sobre **HTML, CSS, Angular, NET Core, SQL Server**
+Electronic Engineer building production systems for US companies — from enterprise server infrastructure to complete web platforms and AI-powered automation tools.
 
-- 📫 Como me puede contactar **jesusdanielsar@gmail.com**
+[![Portfolio](https://img.shields.io/badge/Portfolio-jdsanchez.dev-000000?style=for-the-badge&logo=firefox&logoColor=white)](https://jdsanchez.dev)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-danielsanch-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/danielsanch/)
+[![Email](https://img.shields.io/badge/Email-hola@jdsanchez.dev-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:hola@jdsanchez.dev)
+[![TikTok](https://img.shields.io/badge/TikTok-@daniel.sanchezr-000000?style=for-the-badge&logo=tiktok&logoColor=white)](https://www.tiktok.com/@daniel.sanchezr)
 
-<h3 align="left">Connect with me:</h3>
-<p align="left">
-<a href="https://linkedin.com/in/danielsanch" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="danielsanch" height="30" width="40" /></a>
-<a href="https://instagram.com/danielsanchez512" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="danielsanchez512" height="30" width="40" /></a>
-</p>
+</div>
 
-<h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://angular.io" target="_blank" rel="noreferrer"> <img src="https://angular.io/assets/images/logos/angular/angular.svg" alt="angular" width="40" height="40"/> </a> <a href="https://www.arduino.cc/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/arduino-1.svg" alt="arduino" width="40" height="40"/> </a> <a href="https://azure.microsoft.com/en-in/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/microsoft_azure/microsoft_azure-icon.svg" alt="azure" width="40" height="40"/> </a> <a href="https://www.w3schools.com/cs/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" alt="csharp" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://dotnet.microsoft.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/dot-net/dot-net-original-wordmark.svg" alt="dotnet" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://www.mathworks.com/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Matlab_Logo.png" alt="matlab" width="40" height="40"/> </a> <a href="https://www.microsoft.com/en-us/sql-server" target="_blank" rel="noreferrer"> <img src="https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg" alt="mssql" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> <a href="https://www.sketch.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/sketchapp/sketchapp-icon.svg" alt="sketch" width="40" height="40"/> </a> <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> </a> <a href="https://www.adobe.com/products/xd.html" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/adobe-xd.svg" alt="xd" width="40" height="40"/> </a> </p>
+---
+
+### What I Do
+
+- **Web Applications** — Full-stack platforms with React, Node.js, Firebase
+- **Server Infrastructure** — Enterprise virtualization with HP DL380, Windows Server, Cloudflare Zero Trust
+- **AI-Powered Tools** — Automation systems integrating Claude, Gemini, and custom AI workflows
+- **Business Intelligence** — Trello API + Power BI dashboards with gamified productivity systems
+
+### Production Systems I've Built
+
+| Project | Description | Tech |
+|---------|-------------|------|
+| **Smart Finishes Hub** | Complete LMS with courses, quizzes, certifications & gamified rankings | React, Node.js, Firebase |
+| **Enterprise Infra** | 3-node HP DL380 virtualization cluster with Cloudflare Zero Trust | Windows Server 2022, RDS |
+| **Bid Processor** | Automated construction bid analysis with AI | Node.js, Gemini AI |
+| **Revision MarIA** | AI-powered architecture project auditor | Node.js, AI Integration |
+| **Productivity Analytics** | Employee performance system with bonus gamification | Trello API, Power BI |
+| **SaldoReal** | Personal finance app for daily tracking | React, Firebase |
+| **Berlin Artesanias** | E-commerce platform with AI quote calculator | JavaScript, Firebase |
+
+### Tech Stack
+
+<div align="center">
+
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+![Angular](https://img.shields.io/badge/Angular-DD0031?style=flat-square&logo=angular&logoColor=white)
+![C#](https://img.shields.io/badge/C%23-239120?style=flat-square&logo=csharp&logoColor=white)
+![Windows Server](https://img.shields.io/badge/Windows_Server-0078D4?style=flat-square&logo=windows&logoColor=white)
+![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=flat-square&logo=cloudflare&logoColor=white)
+![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=flat-square&logo=powerbi&logoColor=black)
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
+
+</div>
+
+---
+
+<div align="center">
+
+**Available for remote work** | Yopal, Colombia (GMT-5)
+
+</div>
