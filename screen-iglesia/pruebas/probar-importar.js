@@ -19,6 +19,8 @@ function generar(formato) {
       return JSON.stringify({ translation: 'Prueba', books: B.libros.map((caps, b) => ({ name: INGLES[b], chapters: caps.map((vs, c) => ({ chapter: c + 1, verses: vs.map((t, v) => ({ verse: v + 1, text: t })) })) })) });
     case 'JSON anidado (abbrev/chapters)':
       return JSON.stringify(B.libros.map((caps, b) => ({ abbrev: 'x' + b, chapters: caps })));
+    case 'JSON FreeShow (number)':
+      return JSON.stringify({ name: 'Prueba', books: B.libros.map((caps, b) => ({ number: b + 1, name: L[b].nombre, chapters: caps.map((vs, c) => ({ number: c + 1, verses: vs.map((t, v) => ({ number: v + 1, text: t })) })) })) });
     case 'JSON lista plana':
       { const a = []; recorrer((b, c, v, t) => a.push({ book: L[b].nombre, chapter: c, verse: v, text: t })); return JSON.stringify(a); }
     case 'Zefania XML':
@@ -56,6 +58,12 @@ function sqlite(SQL, tipo) {
     db.run("INSERT INTO info VALUES ('description','Prueba MyBible')");
     const st = db.prepare('INSERT INTO verses VALUES (?,?,?,?)');
     recorrer((b, c, v, t) => st.run([Imp.MYBIBLE[b], c, v, t])); st.free();
+  } else if (tipo === 'OpenLP') {
+    db.run('CREATE TABLE metadata (key TEXT, value TEXT); CREATE TABLE book (id INT, book_reference_id INT, testament_reference_id INT, name TEXT); CREATE TABLE verse (id INT, book_id INT, chapter INT, verse INT, text TEXT);');
+    db.run("INSERT INTO metadata VALUES ('name','Prueba OpenLP')");
+    B.libros.forEach((_, b) => db.run('INSERT INTO book VALUES (?,?,?,?)', [b + 101, b + 1, b < 39 ? 1 : 2, L[b].nombre]));
+    const st = db.prepare('INSERT INTO verse VALUES (?,?,?,?,?)'); let k = 0;
+    recorrer((b, c, v, t) => st.run([k++, b + 101, c, v, t])); st.free();
   } else {
     db.run('CREATE TABLE Details (Title TEXT, Description TEXT); CREATE TABLE Bible (Book INT, Chapter INT, Verse INT, Scripture TEXT);');
     db.run("INSERT INTO Details VALUES ('Prueba','Prueba e-Sword')");
@@ -74,7 +82,7 @@ function comparar(biblia) {
 
 (async () => {
   const SQL = await initSqlJs();
-  const casos = ['JSON libros (scrollmapper)', 'JSON anidado (abbrev/chapters)', 'JSON lista plana', 'Zefania XML',
+  const casos = ['JSON libros (scrollmapper)', 'JSON anidado (abbrev/chapters)', 'JSON FreeShow (number)', 'JSON lista plana', 'Zefania XML',
     'OSIS XML (contenedor)', 'OSIS XML (hitos sID/eID)', 'OpenSong XML', 'Texto "Libro cap:ver texto"', 'TSV numérico', 'CSV'];
   let fallas = 0;
   for (const caso of casos) {
@@ -82,7 +90,7 @@ function comparar(biblia) {
     const r = comparar(b); fallas += r.mal ? 1 : 0;
     console.log((r.mal ? '❌ ' : '✅ ') + caso.padEnd(32) + ` libros ${b.resumen.libros}, capítulos ${b.resumen.capitulos}, versículos ${b.resumen.versiculos}` + (r.mal ? `  — ${r.mal} distintos, ej. ${r.primero}` : ''));
   }
-  for (const [tipo, archivo] of [['MyBible', 'x.SQLite3'], ['e-Sword', 'x.bblx']]) {
+  for (const [tipo, archivo] of [['MyBible', 'x.SQLite3'], ['e-Sword', 'x.bblx'], ['OpenLP', 'x.sqlite']]) {
     const b = await Imp.importar(archivo, sqlite(SQL, tipo), { SQL });
     const r = comparar(b); fallas += r.mal ? 1 : 0;
     console.log((r.mal ? '❌ ' : '✅ ') + (tipo + ' (SQLite)').padEnd(32) + ` libros ${b.resumen.libros}, capítulos ${b.resumen.capitulos}, versículos ${b.resumen.versiculos} · "${b.nombre}"` + (r.mal ? `  — ${r.mal} distintos, ej. ${r.primero}` : ''));

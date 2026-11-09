@@ -4,7 +4,8 @@
  * Formatos aceptados:
  *  - JSON: varias estructuras comunes (libros/capítulos/versículos, lista plana de versículos, etc.)
  *  - XML: Zefania (.xml), OSIS (.xml / .osis), OpenSong (sin extensión o .xml)
- *  - SQLite: MyBible (.SQLite3), e-Sword (.bblx), MySword (.bbl.mybible)
+ *  - SQLite: MyBible (.SQLite3), e-Sword (.bblx), MySword (.bbl.mybible), OpenLP (.sqlite)
+ *  - JSON de FreeShow (books/chapters/verses con "number")
  *  - Texto / CSV / TSV: "Juan 3:16 texto", "43|3|16|texto", "libro,capitulo,versiculo,texto"
  *
  * Resultado: { nombre, abrev, libros: [66][capítulos][versículos] } con el canon de 66 libros.
@@ -107,13 +108,13 @@
     if (d && !Array.isArray(d) && (d.books || d.Books)) { nombre = typeof d.translation === 'string' ? d.translation : (d.name || ''); d = d.books || d.Books; }
     if (Array.isArray(d) && d.length && (d[0].chapters || d[0].capitulos)) {
       d.forEach((b, pos) => {
-        let i = indiceLibro(b.name ?? b.nombre ?? b.book ?? b.abbrev ?? b.id);
+        let i = b.number ? indiceLibro(b.number) : indiceLibro(b.name ?? b.nombre ?? b.book ?? b.abbrev ?? b.id);
         if (i < 0 && d.length === 66) i = pos;
         (b.chapters || b.capitulos).forEach((c, ci) => {
           const vs = Array.isArray(c) ? c : (c.verses || c.versiculos || []);
-          const cn = Array.isArray(c) ? ci + 1 : +(c.chapter ?? c.capitulo ?? ci + 1);
+          const cn = Array.isArray(c) ? ci + 1 : +(c.chapter ?? c.capitulo ?? c.number ?? ci + 1);
           vs.forEach((v, vi) => typeof v === 'string' ? poner(libros, i, cn, vi + 1, v)
-            : poner(libros, i, cn, +(v.verse ?? v.versiculo ?? vi + 1), v.text ?? v.texto));
+            : poner(libros, i, cn, +(v.verse ?? v.versiculo ?? v.number ?? vi + 1), v.text ?? v.texto ?? v.value));
         });
       });
       return { nombre, libros };
@@ -208,7 +209,14 @@
         if (det) { const k = det.columns.findIndex(c => /description|title/i.test(c)); if (k >= 0) nombre = det.values[0][k]; }
         for (const [b, c, v, t] of db.exec('SELECT Book, Chapter, Verse, Scripture FROM Bible')[0].values)
           poner(libros, +b - 1, +c, +v, limpiarRTF(t));
-      } else throw new Error('Esta base de datos no parece MyBible, e-Sword ni MySword.');
+      } else if (tablas.includes('verse') && tablas.includes('book')) { // OpenLP (.sqlite de su carpeta de datos)
+        const meta = tablas.includes('metadata') ? db.exec("SELECT key, value FROM metadata WHERE key='name'")[0] : null;
+        if (meta) nombre = meta.values[0][1];
+        const ref = {};
+        for (const [id, r] of db.exec('SELECT id, book_reference_id FROM book')[0].values) ref[id] = +r - 1;
+        for (const [b, c, v, t] of db.exec('SELECT book_id, chapter, verse, text FROM verse')[0].values)
+          poner(libros, ref[b], +c, +v, t);
+      } else throw new Error('Esta base de datos no parece MyBible, e-Sword, MySword ni OpenLP.');
     } finally { db.close(); }
     return { nombre, libros };
   }
