@@ -1,0 +1,9 @@
+# Biblias con derechos de autor: se importan en la app del computador de la iglesia, NUNCA se suben aquí.
+biblias-privadas/
+*.SQLite3
+*.sqlite3
+*.bblx
+*.bbl.mybible
+*.mybible
+*.osis
+*.xmm
