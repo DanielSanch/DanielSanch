@@ -1,0 +1,12 @@
+{
+  "name": "pruebas-screen-iglesia",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "puntos": "node probar-puntos.js",
+    "puntos-ia": "node probar-puntos-ia.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "1.2.0"
+  }
+}

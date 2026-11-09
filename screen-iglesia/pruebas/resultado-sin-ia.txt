@@ -1,0 +1,46 @@
+
+=== A. Estructurada y limpia (el amor de Dios)
+  Esperado:
+    1. El amor de Dios es incondicional
+    2. El amor de Dios transforma nuestra vida
+    3. El amor de Dios nos envía a amar a otros
+  En pantalla (sin IA):
+    1. El amor de Dios es incondicional   [t=46, repetido]
+    2. El amor de Dios transforma nuestra vida   [t=136, repetido]
+    3. El amor de Dios nos envía a amar a otros   [t=250, repetido]
+
+=== B. Errores de transcripción con palabras reales (la fe)
+  Esperado:
+    1. La fe viene por el oír
+    2. La fe se prueba en el desierto
+    3. La fe se demuestra con obras
+  En pantalla (sin IA):
+    1. La fe viene por el oir   [t=45, repetido]
+    2. La fe se prueba en el de cierto   [t=230, limpio]
+    (descartado 3: "La fe se demuestra con sobras" - baja calidad (0.83))
+
+=== C. Sin marcadores explícitos (la oración)
+  Esperado:
+    1. La oración nos acerca a Dios
+    2. La oración cambia nuestro corazón
+    3. La oración abre puertas
+  En pantalla (sin IA):
+    (nada)
+
+=== D. Muletillas e interrupciones (el perdón)
+  Esperado:
+    1. El perdón libera
+    2. La amargura te enferma
+    3. Perdonar no es olvidar, es soltar
+  En pantalla (sin IA):
+    1. El perdón libera   [t=15, repetido]
+    2. La amargura te enferma   [t=110, repetido]
+    3. Perdonar no es olvidar es soltar   [t=fin, limpio]
+
+=== E. Falsa alarma (no es un punto de la enseñanza)
+  Esperado:
+    (nada)
+  En pantalla (sin IA):
+    (nada)
+    (descartado 1: "Quiero agradecer" - baja calidad (0.50))
+    (descartado 2: "Antes de empezar apaguen los celulares por favor" - baja calidad (0.63))
